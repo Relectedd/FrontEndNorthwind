@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
         this.toastrService.info(response.message)
         localStorage.setItem("token",response.data.token) //can be serviceable.
       },responseError=>{
-        console.log(responseError)
+        //console.log(responseError)
+        this.toastrService.error(responseError.error)
       })
     }
   }
